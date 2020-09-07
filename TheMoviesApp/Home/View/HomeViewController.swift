@@ -11,7 +11,7 @@ import RxSwift
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var tableVIew: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activity: UIActivityIndicatorView!
     
     private var router = HomeRouter()
@@ -22,10 +22,21 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.delegate = self
+        tableView.dataSource = self
+        configureTableView()
+
         viewModel.bind(view: self, router: router)
+
         getData()
     }
 
+    private func configureTableView() {
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.register(UINib(nibName: "CustomMovieCell", bundle: nil),
+                           forCellReuseIdentifier: "CustomMovieCell")
+    }
+    
     private func getData() {
         return viewModel.getListMovies()
         // Manejar la concurrencia de hilos de RxSwift
@@ -47,7 +58,7 @@ class HomeViewController: UIViewController {
         DispatchQueue.main.async {
             self.activity.stopAnimating()
             self.activity.isHidden = true
-            self.tableVIew.reloadData()
+            self.tableView.reloadData()
         }
     }
 }
@@ -58,15 +69,18 @@ extension HomeViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
-        cell.textLabel?.text = movies[indexPath.row].originalTitle
+        let cell =
+            tableView.dequeueReusableCell(withIdentifier:"CustomMovieCell") as! CustomMovieCell
+
+        cell.titleMovie.text = movies[indexPath.row].title
+        cell.descriptionMovie.text = movies[indexPath.row].sinopsis
 
         return cell
     }
-
-
 }
 
 extension HomeViewController: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
 }

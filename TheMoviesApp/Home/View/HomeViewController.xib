@@ -10,7 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="TheMoviesApp" customModuleProvider="target">
             <connections>
                 <outlet property="activity" destination="ODi-v1-WMy" id="Swf-qM-zWv"/>
-                <outlet property="tableVIew" destination="6y7-ax-Hkt" id="9GR-lc-wzn"/>
+                <outlet property="tableView" destination="6y7-ax-Hkt" id="oWN-GZ-Grq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
