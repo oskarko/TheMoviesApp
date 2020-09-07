@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,8 @@
 		E2197C3B24FFE00A00219664 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2197C3A24FFE00A00219664 /* HomeRouter.swift */; };
 		E2197C3F24FFE26600219664 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2197C3E24FFE26600219664 /* HomeViewModel.swift */; };
 		E2D3DDC22500E42F006F2B2D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D3DDC12500E42F006F2B2D /* Constants.swift */; };
+		E2D3DDC52500FE8E006F2B2D /* ManagerServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D3DDC42500FE8E006F2B2D /* ManagerServices.swift */; };
+		E2D3DDC72501009F006F2B2D /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D3DDC62501009F006F2B2D /* Movies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		E2197C3A24FFE00A00219664 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		E2197C3E24FFE26600219664 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E2D3DDC12500E42F006F2B2D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E2D3DDC42500FE8E006F2B2D /* ManagerServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerServices.swift; sourceTree = "<group>"; };
+		E2D3DDC62501009F006F2B2D /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +66,6 @@
 				D4D3E01B555CC06FEB82E8CE /* Pods-TheMoviesApp.debug.xcconfig */,
 				04829A2FC15323DE78791F24 /* Pods-TheMoviesApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -70,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				E2197C1D24FFDE6300219664 /* TheMoviesApp */,
+				E2D3DDC32500FE6C006F2B2D /* NetworkManager */,
 				E2197C1C24FFDE6300219664 /* Products */,
 				2CA1D0690133C2ED9893EE55 /* Pods */,
 				076B3ACE2A2B33802FF177A7 /* Frameworks */,
@@ -137,6 +141,7 @@
 		E2197C3C24FFE20A00219664 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E2D3DDC62501009F006F2B2D /* Movies.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -155,6 +160,14 @@
 				E2D3DDC12500E42F006F2B2D /* Constants.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E2D3DDC32500FE6C006F2B2D /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				E2D3DDC42500FE8E006F2B2D /* ManagerServices.swift */,
+			);
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,7 +285,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2D3DDC52500FE8E006F2B2D /* ManagerServices.swift in Sources */,
 				E2197C3F24FFE26600219664 /* HomeViewModel.swift in Sources */,
+				E2D3DDC72501009F006F2B2D /* Movies.swift in Sources */,
 				E2197C1F24FFDE6300219664 /* AppDelegate.swift in Sources */,
 				E2197C2124FFDE6300219664 /* SceneDelegate.swift in Sources */,
 				E2197C3624FFDF2700219664 /* HomeViewController.swift in Sources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="TheMoviesApp" customModuleProvider="target">
             <connections>
+                <outlet property="activity" destination="ODi-v1-WMy" id="Swf-qM-zWv"/>
+                <outlet property="tableVIew" destination="6y7-ax-Hkt" id="9GR-lc-wzn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,17 +19,30 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The Movies App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCY-2f-g55">
-                    <rect key="frame" x="145" y="438" width="124" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6y7-ax-Hkt">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ODi-v1-WMy">
+                    <rect key="frame" x="188.5" y="225" width="37" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="37" id="RIt-Ir-AUv"/>
+                        <constraint firstAttribute="height" constant="37" id="wUx-KZ-DGd"/>
+                    </constraints>
+                    <color key="color" red="0.33725490200000002" green="0.69411764710000001" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="6y7-ax-Hkt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0Tc-s6-lsG"/>
+                <constraint firstAttribute="bottom" secondItem="6y7-ax-Hkt" secondAttribute="bottom" id="Gi9-2o-3jF"/>
+                <constraint firstItem="6y7-ax-Hkt" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="J4P-Jc-27B"/>
+                <constraint firstItem="6y7-ax-Hkt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Jut-YL-gs7"/>
+                <constraint firstItem="ODi-v1-WMy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LM3-cJ-WXn"/>
+                <constraint firstItem="ODi-v1-WMy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="181" id="k87-VZ-ZbM"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="149"/>
+            <point key="canvasLocation" x="137.68115942028987" y="148.66071428571428"/>
         </view>
     </objects>
 </document>
