@@ -9,7 +9,7 @@ Developed following [this course from Sergio Becerril](https://www.youtube.com/w
 ![alt tag4](images/image04.png)
 ![alt tag5](images/image05.png)
 
-Para más información, visita mi blog: [www.oscargarrucho.com](http://www.oscargarrucho.com/)
+Visit my blog for more info: [www.oscargarrucho.com](http://www.oscargarrucho.com/)
 
 MIT License
 
