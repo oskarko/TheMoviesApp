@@ -1,7 +1,15 @@
 # TheMoviesApp
 iOS project developed with *RxSwift* + *MVVM* pattern + *Coordinator*
 
-Developed following this course: https://www.youtube.com/watch?v=bM6EbP5MGW8&list=PLaGK9OPKkB9fBzKQ4GHNkZIC1N5Wpv15m&ab_channel=SergioBecerril
+Developed following [this course from Sergio Becerril](https://www.youtube.com/watch?v=bM6EbP5MGW8&list=PLaGK9OPKkB9fBzKQ4GHNkZIC1N5Wpv15m&ab_channel=SergioBecerril)
+
+![alt tag1](images/image01.png)
+![alt tag2](images/image02.png)
+![alt tag3](images/image03.png)
+![alt tag4](images/image04.png)
+![alt tag5](images/image05.png)
+
+Para más información, visita mi blog: [www.oscargarrucho.com](http://www.oscargarrucho.com/)
 
 MIT License
 
