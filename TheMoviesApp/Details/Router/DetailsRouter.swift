@@ -1,24 +1,30 @@
 //
-//  HomeRouter.swift
+//  DetailsRouter.swift
 //  TheMoviesApp
 //
-//  Created by Oscar Rodriguez Garrucho on 02/09/2020.
+//  Created by Oscar Rodriguez Garrucho on 08/09/2020.
 //  Copyright © 2020 Little Monster. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class HomeRouter {
+class DetailsRouter {
     var viewController: UIViewController {
         return makeViewController()
     }
 
+    private var movieID: String?
     private var sourceView: UIViewController?
 
+    init(movieID: String? = "") {
+        self.movieID = movieID
+    }
+
     private func makeViewController() -> UIViewController {
-        let viewController = HomeViewController(nibName: "HomeViewController",
+        let viewController = DetailsViewController(nibName: "DetailsViewController",
                                                 bundle: Bundle.main)
+        viewController.movieID = movieID
         return viewController
     }
 
@@ -26,10 +32,5 @@ class HomeRouter {
         guard let sourceView = sourceView else { fatalError("Fatal error") }
 
         self.sourceView = sourceView
-    }
-
-    func navigateToDetailsView(movieID: String) {
-        let detailsView = DetailsRouter(movieID: movieID).viewController
-        sourceView?.navigationController?.pushViewController(detailsView, animated: true)
     }
 }

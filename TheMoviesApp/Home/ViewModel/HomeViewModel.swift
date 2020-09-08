@@ -26,4 +26,8 @@ class HomeViewModel {
     func getListMovies() -> Observable<[Movie]> {
         return managerServices.getPopularMovies()
     }
+
+    func makeDetailsView(movieID: String) {
+        router?.navigateToDetailsView(movieID: movieID)
+    }
 }

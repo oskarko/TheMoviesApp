@@ -12,8 +12,8 @@ import RxCocoa
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var activity: UIActivityIndicatorView!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var activity: UIActivityIndicatorView!
     
     private var router = HomeRouter()
     private var viewModel = HomeViewModel()
@@ -82,9 +82,8 @@ class HomeViewController: UIViewController {
                     self.reloadTableView()
             }, onError: { error in
                 print("Unknown error: " + error.localizedDescription)
-            }, onCompleted: {
-                // not necessary
-            }).disposed(by: disposeBag)
+            })
+            .disposed(by: disposeBag)
         // Dar por completado la secuencia de RxSwift
     }
 
@@ -122,6 +121,13 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let movie: Movie = searchController.isActive && searchController.searchBar.text != "" ?
+            filteredMovies[indexPath.row] : movies[indexPath.row]
+
+        viewModel.makeDetailsView(movieID: "\(movie.movieID)")
     }
 }
 
